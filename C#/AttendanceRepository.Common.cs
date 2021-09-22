@@ -7,7 +7,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public DataTable LOAD_PERIOD(AT_PERIODDTO obj)
     {
         DataTable dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -24,7 +24,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public List<AT_PERIODDTO> LOAD_PERIODBylinq(AT_PERIODDTO obj)
     {
         List<AT_PERIODDTO> dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -41,7 +41,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public AT_PERIODDTO LOAD_PERIODByID(AT_PERIODDTO obj)
     {
         AT_PERIODDTO dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -59,7 +59,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public DataTable GetTerminal(AT_TERMINALSDTO obj)
     {
         DataTable dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -77,7 +77,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public DataTable GetTerminalMeal(AT_TERMINALSDTO obj) As DataTable
     {
         DataTable dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -95,7 +95,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public DataSet GetDataFromOrg(PARAMDTO obj ) 
     { 
         DataSet dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -112,7 +112,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public Boolean CLOSEDOPEN_PERIOD(PARAMDTO param)
     {
         Boolean dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
@@ -129,7 +129,7 @@ partial class AttendanceRepository : AttendanceRepositoryBase
     public Boolean IS_PERIODSTATUS(PARAMDTO param)
     {
         Boolean dt;
-        using (New AttendanceBusinessClient rep = new AttendanceBusinessClient())
+        using (AttendanceBusinessClient rep = new AttendanceBusinessClient())
         {
             try
             {
