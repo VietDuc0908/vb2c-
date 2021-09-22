@@ -7,8 +7,9 @@ using LinqKit;
 // NOTE: You can use the "Rename" command on the context menu to change the class name "Service1" in both code and config file together.
 namespace AttendanceBusiness.ServiceImplementations
 {
-    public partial class AttendanceBusiness
+    public partial class AttendanceBusiness : IAttendanceBusiness
     {
+        #region HOLIDAY
         public List<AT_HOLIDAYDTO> GetHoliday(AT_HOLIDAYDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -98,8 +99,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
-
+        #region Holiday gerenal
         public List<AT_HOLIDAY_GENERALDTO> GetHolidayGerenal(AT_HOLIDAY_GENERALDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -189,7 +191,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region AT_FML Danh mục kiểu công
         public List<AT_TIME_MANUALDTO> GetSignByPage(string pagecode)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -294,7 +298,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Danh mục ca
         public List<AT_GSIGNDTO> GetAT_GSIGN(AT_GSIGNDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -384,7 +390,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Quy định đi muộn về sớm
         public List<AT_DMVSDTO> GetAT_DMVS(AT_DMVSDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -474,7 +482,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Danh mục ca làm việc
         public List<AT_SHIFTDTO> GetAT_SHIFT(AT_SHIFTDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -579,8 +589,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
-
+        #region Thiết lập số ngày nghỉ theo dõi đối tượng
         public List<AT_HOLIDAY_OBJECTDTO> GetAT_Holiday_Object(AT_HOLIDAY_OBJECTDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -670,7 +681,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Thiết lập đối tượng chấm công theo cấp nhân sự
         public List<AT_SETUP_SPECIALDTO> GetAT_SETUP_SPECIAL(AT_SETUP_SPECIALDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -760,7 +773,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Thiết lập đối tượng chấm công theo nhân viên
         public List<AT_SETUP_TIME_EMPDTO> GetAT_SETUP_TIME_EMP(AT_SETUP_TIME_EMPDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -850,7 +865,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Thiết lập máy chấm công
         public List<AT_TERMINALSDTO> GetAT_TERMINAL(AT_TERMINALSDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc", UserLog log = null/* TODO Change to default(_) if this is not a reference type */)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -954,7 +971,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Đăng kí chấm công mặc định
         public List<AT_SIGNDEFAULTDTO> GetAT_SIGNDEFAULT(AT_SIGNDEFAULTDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc", UserLog log = null/* TODO Change to default(_) if this is not a reference type */)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1117,7 +1136,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region đăng ký nghỉ trên iportal
         public List<AT_TIMESHEET_REGISTERDTO> GetPlanningAppointmentByEmployee(decimal empid, DateTime startdate, DateTime enddate, List<AT_TIME_MANUALDTO> listSign)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1230,7 +1251,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region Phê duyệt đăng ký nghỉ trên iportal
         public List<AT_TIME_MANUALDTO> GetListSignCode(string gSignCode)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1301,8 +1324,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
-
+        #region Thiết lập kiểu công
         public List<AT_TIME_MANUALDTO> GetAT_TIME_MANUAL(AT_TIME_MANUALDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1421,8 +1445,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
-
+        #region Danh mục tham số hệ thống
         public List<AT_LISTPARAM_SYSTEAMDTO> GetListParamItime(AT_LISTPARAM_SYSTEAMDTO _filter, int PageIndex = 0, int PageSize = int.MaxValue, ref int Total = 0, string Sorts = "CREATED_DATE desc")
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1512,7 +1537,9 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
 
+        #region
         public string AutoGenCode(string firstChar, string tableName, string colName)
         {
             using (AttendanceRepository rep = new AttendanceRepository())
@@ -1560,5 +1587,6 @@ namespace AttendanceBusiness.ServiceImplementations
                 }
             }
         }
+        #endregion
     }
 }
